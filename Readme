@@ -1,0 +1,9 @@
+This project is a study project to learning Robot Framework
+
+The website tested is a project mark-85 developed by Fernando Papito and runned locally.
+
+Mainly robot commands to execute:
+
+robot -d ./logs/ tests/signup.robot
+
+robot -d ./logs/ -i dup tests/signup.robot
