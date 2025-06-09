@@ -2,7 +2,6 @@
 Documentation
 
 Resource    ../resources/base.resource
-Resource    ../resources/pages/SignupPage.resource
 
 Test Setup    Start Session
 Test Teardown    Take Screenshot
@@ -57,21 +56,34 @@ Nao deve permitir cadastro com campos vazios
 
     Alert should be    Informe uma senha com pelo menos 6 digitos
 
-Nao deve cadastrar com senha menor que 6 digitos
-    [Tags]    shortpass
-    [Template]
-    Short password    12345
-    
-
-*** Keywords ***
-Short password    
-    [Arguments]    ${short_pass}
-
+Nao deve cadastrar com email incorreto
     ${user}    Create Dictionary
-    ...        name=Matheus incorretoPass
-    ...        email=matheus@testpass.com
-    ...        password=${short_pass}
-    
+    ...    name=Invalid Email
+    ...    email=invalidmailtest.com
+    ...    password=Test123
+
+    Remove user from database    ${user}[email]
+    Insert user from database    ${user}
+
+
+
     Go to signup page
     Submit signup form    ${user}
     Alert should be    Digite um e-mail válido
+
+Nao deve cadastrar com senha menor que 6 digitos
+    [Tags]    short_pass
+
+    @{password_list}    Create List    1    12    123    1234    12345
+
+    FOR    ${password}    IN    @{password_list}
+        ${user}    Create Dictionary
+        ...        name=Matheus incorretoPass
+        ...        email=matheus@testpass.com
+        ...        password=${password}
+    
+    Go to signup page
+    Submit signup form    ${user}
+    Alert should be    Informe uma senha com pelo menos 6 digitos
+        
+    END

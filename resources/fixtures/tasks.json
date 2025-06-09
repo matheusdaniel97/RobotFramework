@@ -1,0 +1,57 @@
+{
+    "create":{
+        "user": {
+            "name": "Matheus",
+            "email": "ganzenmuller@gmail.com",
+            "password": "pass123"
+        },
+        "task":{
+            "name": "Aprender robot framework",
+            "tags": ["robot", "aprendizagem", "python"]
+        }
+    },
+    "duplicate":{
+        "user": {
+            "name": "MatheusQA",
+            "email": "ganzenmullerQA@gmail.com",
+            "password": "pass123"
+        },
+        "task":{
+            "name": "Incentivar a qualidade para toda equipe de desenvolvimento",
+            "tags": []
+        }
+    },
+    "tags_limit":{
+        "user": {
+            "name": "Matheus",
+            "email": "ganzenmuller@gmail.com",
+            "password": "pass123"
+        },
+        "task":{
+            "name": "Aprender API Rest com Postman",
+            "tags": ["API", "REST", "Postman", "aprendizagem"]
+        }
+    },
+    "done":{
+        "user": {
+            "name": "MatheusDone task",
+            "email": "donetask@gmail.com",
+            "password": "pass123"
+        },
+        "task":{
+            "name": "Criar uma IA generativa",
+            "tags": ["IA", "generativa", "criar"]
+        }
+    },
+    "delete":{
+        "user": {
+            "name": "MatheusDelete task",
+            "email": "deletetask@gmail.com",
+            "password": "pass123"
+        },
+        "task":{
+            "name": "Deletar tarefa do plano de estudos",
+            "tags": ["plano", "deletar", "aprendizagem"]
+        }
+    }
+}
